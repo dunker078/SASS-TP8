@@ -1,0 +1,51 @@
+SASS
+
+programas:
+
+PREPROS o CODEKIT(solo mac)
+
+@import “external”; importa una hoja de estilo externa con nombre “external” x ej.
+@reset.scss (ver!!!)
+
+MIXINS
+
+defino el mixin el la hoja SCSS:
+
+@mixin red {
+	color: red;
+    border: 1px solid red;
+}
+
+luego lo aplico a uno o varios selectores, lo logico es q sea mas de uno, es como un include:
+
+ej: 
+
+p {
+	@include red;
+}
+
+EXTENDS
+
+defino el extend en la hoja SCSS:
+
+%message {
+	border-radius: 2px;
+	color: white;
+	padding: 5px;
+	text-align: center;
+}
+
+.message-success {
+	@extend %message;
+	background-color: $bg-success; (esta variable $bg ya la defini previamente)
+}
+.message-error {
+	@extend %message;
+	background-color: $bg-error; (esta variable $bg ya la defini previamente)
+}
+.message-warning {
+	@extend %message;
+	background-color: $bg-warning; (esta variable $bg ya la defini previamente)
+}
+
+
